@@ -6,6 +6,8 @@
 }
 .user-box{
     background-color: lightslategray;   
+}
+.mine-box{
     display: flex;
     
 }
