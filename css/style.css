@@ -1,0 +1,30 @@
+.sidebar{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+}
+.user-box{
+    background-color: lightslategray;   
+    display: flex;
+    
+}
+.user-box img{
+    width: 70px;
+    border-radius: 50px;
+}
+.alert-box{
+    background-color: aqua;
+}
+.main{
+    background-color: coral;
+    border: 1px solid black;
+}
+.user-content{
+    background-color: lightslategray;
+   height: 100px;
+}
+.chat-box{
+    background-color: white;
+    height: 80px;
+}
