@@ -28,21 +28,26 @@
 }
 /*SEZIONE NOTIFICHE*/
 .alert-box i{
-   font-size: 30px;
+   font-size: 20px;
+   border: 1px solid white;
+   padding: 10px;
+   background-color: white;
+   border-radius: 50%;
+   color:#4dffff ;
+   
 }
 .alert-box{
     background-color:#4dffff;
     height: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+
 }
-.alert-box h3{
-    font-size: 15px;
-}
-.alert-box h5{
+
+.alert-box span{
     font-size: 10px;
-    text-decoration: underline;
+    display: inline-block;
+}
+a{
+    text-decoration: none;
 }
 .main{
     background-image: url(../img/mine.jpg) ;
