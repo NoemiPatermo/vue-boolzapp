@@ -33,32 +33,38 @@
    padding: 10px;
    background-color: white;
    border-radius: 50%;
-   color:#4dffff ;
+   color:rgb(77,185,221) ;
    
 }
 .alert-box{
-    background-color:#4dffff;
+    background-color: rgb(77,185,221);
     height: 80px;
-
 }
 
 .alert-box span{
-    font-size: 10px;
-    display: inline-block;
+    font-size: 15px;
+    display: block;
+}
+#notification{
+    font-weight: 700;
 }
 a{
-    text-decoration: none;
+    color: black;
+}
+/* end sezione notifiche*/
+.user-chat span{
+    display: inline-block;
+    
+}
+.second-icon-box{
+    display: flex;
+    justify-content: space-around;
 }
 .main{
     background-image: url(../img/mine.jpg) ;
     border: 1px solid black;
 }
-.user-chat{
-    display: flex;
-   align-items: flex-start;
 
-  
-}
 .chat-box{
     background-color: white;
     height: 80px;
