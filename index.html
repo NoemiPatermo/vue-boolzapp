@@ -54,21 +54,20 @@
                             </div>
                         </div>
 
-                        <div class="search-chat">
-                            <div>
-                                <i class="fas fa-search"></i>
-                                <input class="form-control" placeholder="Cerca o inizia una nuova chat">
+                        <div class="search-chat mt-2">
+                            <div class="search-box">
+                                <i class="fas fa-search mx-2"></i>
+                                <input type="text" placeholder="   Cerca o inizia una nuova chat">
                             </div>
                         </div>
 
-                            <div class="contacts">
+                            <!-- <div class="contacts-list">
                                <ul>
-                                   <li>Fabio</li>
-                                   <li>Marco</li>
-                                   <li>Maria</li>
-                                   <li>Giovanni</li>
+                                   <li v-for="(name, index) in contacts">
+                                      <img :src="contacts[pictureIndex].name" alt="">
+                                   </li>
                                </ul>
-                            </div>
+                            </div> -->
                     </div>
                 </div>
                 <!--MAIN CONTENT-->
@@ -76,13 +75,14 @@
                     <div class="row">
                         <div class=" col-12 user-content">
                             <div class="row">
-                                <div class=" col-10 user-chat p-2">
-                                    <div class="user-img">
+                                <div class=" col-10 d-flex user-chat p-2">
+                                    <span class="user-img">
                                         <img src="./img/avatar_1.jpg" alt="picture">
-                                    </div>
-                                    <span>Michele</span>
-                                    <span>Ultimo accesso oggi alle</span>
-                                    
+                                    </span> 
+                                   <span>
+                                        <div>Michele</div>
+                                        <div>Ultimo accesso oggi alle</div>
+                                   </span>
                                 </div>
                                 <div class="col-2 second-icon-box p-3">  
                                     <i class="fas fa-search"></i>
@@ -90,17 +90,17 @@
                                     <i class="fas fa-ellipsis-v"></i>
                                 </div> 
                             </div>
-                         
                         </div>
-
-
-
                         <div class="main-content">
-                            background di ottavio OK
+                            
                             
                         </div>
-                        <div class="chat-box">
-                            crea input
+                        <div class="chat-box col-12 mt-5">
+                            <i class="far fa-smile"></i>
+                            <div class=" col-10 message">
+                                <input type="text" placeholder=" Scrivi un messaggio">
+                            </div>
+                            <i class="fas fa-microphone"></i>
                         </div>
                     </div>
                 </div>

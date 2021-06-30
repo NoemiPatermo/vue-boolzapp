@@ -5,13 +5,13 @@
     height: 80vh;
 }
 .user-box, .user-content{
-    background-color:#e0e0d1;
+    background-color:#dddbd1;
     height: 70px; 
     border: 1px solid black;  
 }
 .mine-box span{
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 500;
 }
 .icon-box {
     display: flex;
@@ -33,11 +33,11 @@
    padding: 10px;
    background-color: white;
    border-radius: 50%;
-   color:rgb(77,185,221) ;
+   color:#aadaff ;
    
 }
 .alert-box{
-    background-color: rgb(77,185,221);
+    background-color: #aadaff;
     height: 80px;
 }
 
@@ -52,6 +52,15 @@ a{
     color: black;
 }
 /* end sezione notifiche*/
+.search-box input{
+    border: none;
+    width: 90%;
+}
+.search-box{
+    border: 1px solid grey;
+    border-radius: 5px;
+    
+}
 .user-chat span{
     display: inline-block;
     
@@ -63,9 +72,20 @@ a{
 .main{
     background-image: url(../img/mine.jpg) ;
     border: 1px solid black;
+    position: relative;
 }
 
 .chat-box{
-    background-color: white;
-    height: 80px;
+    background-color:#dddbd1 ;
+    height: 70px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 0px;
+}
+.message input{
+    width: 100%;
+    border-radius: 3px;
 }

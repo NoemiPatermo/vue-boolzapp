@@ -6,6 +6,7 @@ new Vue (
             contacts:[
                 {
                     name: 'Michele',
+                    user: 'img/_1.jpg',
                     avatar: '_1',
                     visible: true,
                     messages: [
@@ -28,6 +29,7 @@ new Vue (
                 },
                 {
                     name: 'Fabio',
+                    user: 'img/_2.jpg',
                     avatar: '_2',
                     visible: true,
                     messages: [
@@ -50,6 +52,7 @@ new Vue (
                 },
                 {
                     name: 'Samuele',
+                    user:'img/_3.jpg',
                     avatar: '_3',
                     visible: true,
                     messages: [
@@ -72,6 +75,7 @@ new Vue (
                 },
                 {
                     name: 'Luisa',
+                    user:'img/_4.jpg',
                     avatar: '_4',
                     visible: true,
                     messages: [
@@ -87,7 +91,10 @@ new Vue (
                         }
                     ],
                 },
-            ]
+            ],
+            pictureIndex: 0,
         }
-    }
+        
+    },
+  
 );
