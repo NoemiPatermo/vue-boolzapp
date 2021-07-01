@@ -96,15 +96,21 @@ new Vue(
             ],
 
             indexConctacts: 0,
+            indexMessage: 0,
             
-        },
+        },//chiude il data
         
 
         methods: {
             moveTo: function (index) {
                 this.indexConctacts = index;
             },
+        },
+        methods: {
+            moveOn: function(index) {
+                this.indexMessage = index;
+            }
         }
-    }
+    } //chiude la vue
  );
   

@@ -11,103 +11,102 @@
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
-    <!--Milestone 1
-    - Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
-    - Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) 
-    e dall’interlocutore (bianco) assegnando due classi CSS diverse.
-     Consigli utili:
-        Si possono trascurare le scrollbar verticali, sia nel pannello dei messaggi, che nella lista dei contatti
-        I pulsanti e le icone possono non funzionare (a parte l’invio del messaggio)
-        Per gestire le date, può essere utile la libreria day.js
-        La struttura dell’array dei contatti potrebbe avere questa forma:
--->
-    <div id="app">
-        <div class="container mt-3">
-            <div class="row">
-                <div class="col-4 sidebar">
-                    <div class="row">
-                        <div class=" col-12 user-box">
-                            <div class="row">
-                                <div class=" col-8 mine-box p-2">
-                                    <div class="user-img">
-                                        <img src="./img/avatar blonde.jpg" alt="picture">
+  <div class="container-fluid">
+      
+        <div id="app">
+            
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-4 sidebar">
+                        <div class="row">
+                            <div class=" col-12 user-box">
+                                <div class="row">
+                                    <div class=" col-8 mine-box p-2">
+                                        <div class="user-img">
+                                            <img src="./img/avatar blonde.jpg" alt="picture">
+                                        </div>
+                                        <span>Noemi</span>
                                     </div>
-                                    <span>Noemi</span>
+                                    <div class="col-4 icon-box p-3">  
+                                        <i class="fas fa-circle-notch"></i>
+                                        <i class="fas fa-comment-alt"></i>
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </div> 
                                 </div>
-                                <div class="col-4 icon-box p-3">  
-                                    <i class="fas fa-circle-notch"></i>
-                                    <i class="fas fa-comment-alt"></i>
-                                    <i class="fas fa-ellipsis-v"></i>
+                            </div>
+
+                            <div class=" col-12 alert-box p-2">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <i class="fas fa-bell-slash"></i>
+                                    </div>
+                                    <div class="col-10">
+                                        <span id="notification">Ricevi notifiche di nuovi messaggi</span>
+                                        <a href="#">Attiva notifiche desktop</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="search-chat mt-2">
+                                <div class="search-box">
+                                    <i class="fas fa-search mx-2"></i>
+                                    <input type="text" placeholder="   Cerca o inizia una nuova chat">
+                                </div>
+                            </div>
+                            <!--MILESTONE 1-->
+                                <div class="contacts-list mt-3">
+                                <ul>
+                                    <li v-for="(user, index) in contacts">
+                                        <img :src="user.user" alt="">
+                                        {{user.name}}
+                                    </li>
+                                </ul>
                                 </div> 
-                            </div>
                         </div>
-
-                        <div class=" col-12 alert-box p-2">
-                            <div class="row">
-                                <div class="col-2">
-                                    <i class="fas fa-bell-slash"></i>
-                                </div>
-                                <div class="col-10">
-                                    <span id="notification">Ricevi notifiche di nuovi messaggi</span>
-                                    <a href="#">Attiva notifiche desktop</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="search-chat mt-2">
-                            <div class="search-box">
-                                <i class="fas fa-search mx-2"></i>
-                                <input type="text" placeholder="   Cerca o inizia una nuova chat">
-                            </div>
-                        </div>
-
-                             <div class="contacts-list mt-3">
-                               <ul>
-                                   <li v-for="(user, index) in contacts">
-                                      <img :src="user.user" alt="">
-                                      {{user.name}}
-                                   </li>
-                               </ul>
-                            </div> 
                     </div>
-                </div>
-                <!--MAIN CONTENT-->
-                <div class="col-8 main">
-                    <div class="row">
-                        <div class=" col-12 user-content">
-                            <div class="row">
-                                <div class=" col-10 d-flex user-chat p-2">
-                                    <span class="user-img">
-                                        <img src="./img/avatar_1.jpg" alt="picture">
-                                    </span> 
-                                   <span>
-                                        <div>Michele</div>
-                                        <div>Ultimo accesso oggi alle</div>
-                                   </span>
+                    <!--MAIN CONTENT-->
+                    <div class="col-8 main">
+                        <div class="row">
+                            <div class=" col-12 user-content">
+                                <div class="row">
+                                    <div class=" col-10 d-flex user-chat p-2">
+                                        <span class="user-img">
+                                            <img src="./img/avatar_1.jpg" alt="picture">
+                                        </span> 
+                                    <span>
+                                            <div>Michele</div>
+                                            <div>Ultimo accesso oggi alle</div>
+                                    </span>
+                                    </div>
+                                    <div class="col-2 second-icon-box p-3">  
+                                        <i class="fas fa-search"></i>
+                                        <i class="fas fa-paperclip"></i>
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </div> 
                                 </div>
-                                <div class="col-2 second-icon-box p-3">  
-                                    <i class="fas fa-search"></i>
-                                    <i class="fas fa-paperclip"></i>
-                                    <i class="fas fa-ellipsis-v"></i>
-                                </div> 
                             </div>
-                        </div>
-                        <div class="main-content">
-                            
-                            
-                        </div>
-                        <div class="chat-box col-12 mt-5">
-                            <i class="far fa-smile"></i>
-                            <div class=" col-10 message">
-                                <input type="text" placeholder=" Scrivi un messaggio">
+                            <div class="main-content">
+                                <ul>
+                                    <div v-for="(text, index) in contacts">
+                                        {{contacts[indexMessage].text}}
+
+                                    </div>
+                                </ul>
+                                
                             </div>
-                            <i class="fas fa-microphone"></i>
+                            <div class="chat-box col-12 mt-5">
+                                <i class="far fa-smile"></i>
+                                <div class=" col-10 message">
+                                    <input type="text" placeholder=" Scrivi un messaggio">
+                                </div>
+                                <i class="fas fa-microphone"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+  </div>
     <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
