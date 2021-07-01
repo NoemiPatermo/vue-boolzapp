@@ -97,6 +97,7 @@ new Vue(
 
             indexConctacts: 0,
             indexMessage: 0,
+        
             
         },//chiude il data
         
@@ -106,11 +107,7 @@ new Vue(
                 this.indexConctacts = index;
             },
         },
-        methods: {
-            moveOn: function(index) {
-                this.indexMessage = index;
-            }
-        }
+       
     } //chiude la vue
  );
   
