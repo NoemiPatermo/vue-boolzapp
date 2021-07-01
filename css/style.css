@@ -22,10 +22,20 @@
     width: 50px;
     display: inline-block;
 }
-.user-box img, .user-chat img{
+.user-box img, .user-chat img, .contacts-list img{
     width: 100%;
     border-radius: 50px;
 }
+.contacts-list img{
+    width: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.contacts-list li{
+    list-style: none;
+    border: 1px solid black;
+}
+
 /*SEZIONE NOTIFICHE*/
 .alert-box i{
    font-size: 20px;
