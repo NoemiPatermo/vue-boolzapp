@@ -85,21 +85,23 @@
                                 </div>
                             </div>
                             <div class="main-content">
-                                <div class="col-12  mt-2 ">
-                                    
+                            <!--MILESTON 2, visualizza i messaggi relativi al contatto attivo nel pannello della conversazione-->
+                                <div class=" message-list col-12  mt-2 ">
                                         <div :class="printMessage(index)" 
                                         v-for="(messages,index) in contacts[indexContacts].messages">
                                             <span>{{messages.text}}</span>
                                         </div>
                                 </div>
-
-                                
-                                
+ 
                             </div>
+                            <!--(footer) SEZIONE INPUT-CHAT--MILESTONE 3--l'utente scrive un testo e viene aggiunto come messaggio verde-->
                             <div class="chat-box col-12 mt-5">
                                 <i class="far fa-smile"></i>
                                 <div class=" col-10 message">
-                                    <input type="text" placeholder=" Scrivi un messaggio">
+                                    <input v-model= "userMessage" type="text" @keyup.enter="sendMessage" placeholder=" Scrivi un messaggio">
+                                    <div v-for="message in contacts[indexContacts].messages">
+                                        <span>{{userMessage.index}}</span>
+                                    </div>
                                 </div>
                                 <i class="fas fa-microphone"></i>
                             </div>

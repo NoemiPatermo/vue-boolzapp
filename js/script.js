@@ -102,14 +102,14 @@ new Vue(
             
         },//chiude il data
         
-//funzione associata al v-for che permette di 
-//visualizzare nome e img di ogni  contatto
+                //funzione associata al v-for che permette di 
+                //visualizzare nome e img di ogni  contatto
         methods: {
             moveTo: function (index) {
                 this.indexContacts = index;
             },
         
- //funzione per stampare il messaggio del singolo utente       
+             //funzione per stampare il messaggio del singolo utente       
             printMessage: function(index) 
             {
                const status = this.contacts[this.indexContacts].messages[index].status
@@ -119,8 +119,15 @@ new Vue(
                 } else {
                     return 'receivedMessage';
                 }
-            }
-                
+            }, //funzione per aggiungere un messaggio(pusha oggetto nell'array)
+            sendMessage: function () {
+                this.contacts[this.indexContacts].messages.push({
+                    text: this.userMessage.indexContacts,
+                    status: 'sent',
+                })
+                this.userMessage = "";
+            },
+            
          
         } //chiude il methods
         
