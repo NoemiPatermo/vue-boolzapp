@@ -101,29 +101,28 @@ a{
 .message-list{
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+}
+.date-time{
+    font-size: 10px;
+    text-align: right;
 }
 .sentMessage{
     width: 50%;
     background-color:lightgreen;
     height: 50px;
     border-radius: 10px;
-    justify-content: flex-end;
-    margin-top: 70px;
-    padding: 10px;
-    
-    
+    align-self: flex-end;
+    margin-top: 20px;
+    padding: 10px; 
 }
 .receivedMessage{
     width: 50%;
     background-color:white;
     height: 50px;
     border-radius: 10px;
-    justify-content: flex-start;
-    margin-top: 60px;
-    padding: 10px;
-    
-    
-    
+    margin-top: 20px;
+    padding: 10px;    
 }
 /* SEZIONE INPUT CHAT */
 .chat-box{

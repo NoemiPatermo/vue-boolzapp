@@ -119,17 +119,34 @@ new Vue(
                 } else {
                     return 'receivedMessage';
                 }
-            }, //funzione per aggiungere un messaggio(pusha oggetto nell'array)
-            sendMessage: function () {
-                this.contacts[this.indexContacts].messages.push({
-                    text: this.userMessage.indexContacts,
-                    status: 'sent',
-                })
-                this.userMessage = "";
             },
             
-         
-        } //chiude il methods
+            getCurrentDateTime: function () {
+              
+                const dateTimeNow = dayjs();
+                return dateTimeNow.format("DD/MM/YYYY HH:mm:ss");
+                
+            },
+            //funzione per aggiungere un messaggio(pusha oggetto nell'array)
+            sendMessage: function () {
+                this.contacts[this.indexContacts].messages.push({
+                    date: this.getCurrentDateTime(),
+                    text: this.userMessage,
+                    status: 'sent',
+                });
+            
+                this.userMessage = "";
+                
+                setTimeout(() => { //dopo un secondo apparirà la risposta dell'utente
+                    this.contacts[this.indexContacts].messages.push({
+                        date: this.getCurrentDateTime(),
+                        text: "fa caldissimo!",
+                        status: 'received',
+                    });
+                }, 1000);
+            }
+           
+        }, //chiude il methods
         
        
     } //chiude la vue
