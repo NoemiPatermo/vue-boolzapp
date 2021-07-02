@@ -95,18 +95,35 @@ new Vue(
                
             ],
 
-            indexConctacts: 0,
+            indexContacts: 0,
             indexMessage: 0,
+            userMessage: '',
         
             
         },//chiude il data
         
-
+//funzione associata al v-for che permette di 
+//visualizzare nome e img di ogni  contatto
         methods: {
             moveTo: function (index) {
-                this.indexConctacts = index;
+                this.indexContacts = index;
             },
-        },
+        
+ //funzione per stampare il messaggio del singolo utente       
+            printMessage: function(index) 
+            {
+               const status = this.contacts[this.indexContacts].messages[index].status
+                if (status === 'sent') {
+                    return 'sentMessage';
+                    
+                } else {
+                    return 'receivedMessage';
+                }
+            }
+                
+         
+        } //chiude il methods
+        
        
     } //chiude la vue
  );

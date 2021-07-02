@@ -9,13 +9,12 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>vue-boolzapp</title>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 </head>
 <body>
-  <div class="container-fluid">
-      
-        <div id="app">
-            
-            <div class="container mt-4">
+    <div id="app">
+        <div class="background">
+            <div class="container mt-2 p-4">
                 <div class="row">
                     <div class="col-4 sidebar">
                         <div class="row">
@@ -34,7 +33,7 @@
                                     </div> 
                                 </div>
                             </div>
-
+                        <!--sezione notifiche-->
                             <div class=" col-12 alert-box p-2">
                                 <div class="row">
                                     <div class="col-2">
@@ -46,19 +45,19 @@
                                     </div>
                                 </div>
                             </div>
-
+                        <!--input chat sidebar-->
                             <div class="search-chat mt-2">
                                 <div class="search-box">
                                     <i class="fas fa-search mx-2"></i>
                                     <input type="text" placeholder="   Cerca o inizia una nuova chat">
                                 </div>
                             </div>
-                            <!--MILESTONE 1-->
+                            <!--MILESTONE 1 [visualizzi nome e img lista contatti che al click, cambiano]-->
                                 <div class="contacts-list mt-3">
                                     <ul>
-                                        <li v-for="(contatto, index) in contacts" @click="moveTo(index)">
-                                            <img :src="contatto.user" alt="">
-                                            {{contatto.name}}
+                                        <li v-for="(user, index) in contacts" @click="moveTo(index)" class="chat-with-you">
+                                            <img :src="user.user" alt="">
+                                            {{user.name}}
                                         </li>   
                                     </ul>
                                 </div> 
@@ -71,10 +70,10 @@
                                 <div class="row">
                                     <div class=" col-10 d-flex user-chat p-2">
                                         <span class="user-img">
-                                            <img :src="contacts[indexConctacts].user" alt="">
+                                            <img :src="contacts[indexContacts].user" alt="">
                                         </span> 
                                          <span>
-                                            <div>{{contacts[indexConctacts].name}}</div>
+                                            <div>{{contacts[indexContacts].name}}</div>
                                             <div>Ultimo accesso oggi alle</div>
                                         </span>
                                     </div>
@@ -86,20 +85,16 @@
                                 </div>
                             </div>
                             <div class="main-content">
-                                <div class="col-12 d-flex justify-content-center mt-2 ">
-                                    <div class="send-message">
-
-                                    </div>
-                                    <div class="received-message">
-
-                                    </div>
-
+                                <div class="col-12  mt-2 ">
+                                    
+                                        <div :class="printMessage(index)" 
+                                        v-for="(messages,index) in contacts[indexContacts].messages">
+                                            <span>{{messages.text}}</span>
+                                        </div>
                                 </div>
 
                                 
-                                    <!-- <div v-for="(messages, index) in contacts">
-                                        {{contacts[index].messages}}
-                                    </div>   -->
+                                
                             </div>
                             <div class="chat-box col-12 mt-5">
                                 <i class="far fa-smile"></i>
@@ -113,7 +108,8 @@
                 </div>
             </div>
         </div>
-  </div>
+    </div>
+  
     <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
