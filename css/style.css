@@ -3,18 +3,21 @@
     background: rgb(66,148,136);
     background: linear-gradient(180deg, rgba(66,148,136,1) 20%, rgba(219,219,211,1) 20%);
     background-repeat:no-repeat;
+    height: 100vh;
 }
 .sidebar{
     border: 1px solid black;
     display: flex;
     flex-direction: column;
-    height: 80vh;
+    height: calc(100vh - 90px);
     background-color: white;
 }
+/*box per immagine user e icone  (top-sidebar)*/
 .user-box, .user-content{
-    background-color:#dddbd1;
-    height: 70px;   
+    background-color:#dddbd1; 
+    height: 60px;
 }
+
 .mine-box span{
     font-size: 20px;
     font-weight: 500;
@@ -28,62 +31,74 @@
     width: 50px;
     display: inline-block;
 }
+/*tutti gli avatar*/
 .user-box img, .user-chat img, .contacts-list img{
     width: 100%;
     border-radius: 50px;
 }
-.contacts-list img{
-    width: 50px;
-    margin: 10px;
-    
+/*SEZIONE NOTIFICHE (central sidebar)*/
+.alert-box{
+    background-color: #aadaff;
+    display: flex;
+    flex-direction: column;
+    height: 70px; 
 }
+.alert-box i{
+    font-size: 20px;
+    border: 1px solid white;
+    padding: 10px;
+    background-color: white;
+    border-radius: 50%;
+    color:#aadaff; 
+ }
+ 
+ .alert-box span{
+     font-size: 15px;
+     display: block;
+ }
+ #notification{
+     font-weight: 700;
+ }
+ a{
+     color: black;
+ }
+ /* end sezione notifiche*/
+ .search-box input{
+    border: none;
+    width: 90%;
+    outline: none;
+}
+.search-box{
+    border: 1px solid grey;
+    border-radius: 5px;  
+}
+/*sezione lista conatti*/
 .contacts-list li{
     list-style: none;
     border: 1px solid grey;
     border-radius: 3px;
+    
+}
+.contacts-list img{
+    width:50px;
+    margin: 10px;
+    
 }
 .chat-with-you{
     cursor: pointer;
 }
 .contacts-list ul{
     padding: 0;
+    margin-top: 10px;
+}
+.contacts-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    height: 300px;
+    overflow-y:scroll;
 }
 
-/*SEZIONE NOTIFICHE*/
-.alert-box i{
-   font-size: 20px;
-   border: 1px solid white;
-   padding: 10px;
-   background-color: white;
-   border-radius: 50%;
-   color:#aadaff ;
-   
-}
-.alert-box{
-    background-color: #aadaff;
-    height: 80px;
-}
-
-.alert-box span{
-    font-size: 15px;
-    display: block;
-}
-#notification{
-    font-weight: 700;
-}
-a{
-    color: black;
-}
-/* end sezione notifiche*/
-.search-box input{
-    border: none;
-    width: 90%;
-}
-.search-box{
-    border: 1px solid grey;
-    border-radius: 5px;
-    
-}
 .user-chat span{
     display: inline-block;
     
@@ -92,27 +107,36 @@ a{
     display: flex;
     justify-content: space-around;
 }
+/* BOX CHAT */
+
 .main{
     background-image: url(../img/mine.jpg) ;
     border: 1px solid black;
-    position: relative;
-    
+    position:sticky; 
+    height: calc(100vh- 90px);
+  
 }
+.main-content{
+    overflow-y:scroll;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+
 .message-list{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-}
-.date-time{
-    font-size: 10px;
-    text-align: right;
+    
+
 }
 .sentMessage{
     width: 50%;
     background-color:lightgreen;
     height: 50px;
     border-radius: 10px;
-    align-self: flex-end;
+    align-self:flex-end;
     margin-top: 20px;
     padding: 10px; 
 }
@@ -124,18 +148,26 @@ a{
     margin-top: 20px;
     padding: 10px;    
 }
+.date-time{
+    font-size: 10px;
+    text-align: right;
+}
 /* SEZIONE INPUT CHAT */
 .chat-box{
     background-color:#dddbd1 ;
-    height: 70px;
-    border: 1px solid black;
+    height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: absolute;
     bottom: 0px;
+    
+}
+.chat-box i{
+    font-size: 20px;
 }
 .message input{
     width: 100%;
-    border-radius: 3px;
+    border-radius: 30px;
+    outline: none;
 }

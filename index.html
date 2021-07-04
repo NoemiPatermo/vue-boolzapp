@@ -49,13 +49,13 @@
                             <div class="search-chat mt-2">
                                 <div class="search-box">
                                     <i class="fas fa-search mx-2"></i>
-                                    <input type="text" placeholder="   Cerca o inizia una nuova chat">
+                                    <input type="text" v-model="search" @keyup.enter="filteredAndSorted"  placeholder="   Cerca o inizia una nuova chat">
                                 </div>
                             </div>
                             <!--MILESTONE 1 [visualizzi nome e img lista contatti che al click, cambiano]-->
                                 <div class="contacts-list mt-3">
                                     <ul>
-                                        <li v-for="(user, index) in contacts" @click="moveTo(index)" class="chat-with-you">
+                                        <li v-for="(user, index) in filteredAndSorted" @click="moveTo(index)" class="chat-with-you">
                                             <img :src="user.user" alt="">
                                             {{user.name}}
                                         </li>   
@@ -84,22 +84,27 @@
                                     </div> 
                                 </div>
                             </div>
-                            <div class="main-content">
+
                             <!--MILESTONE 2, visualizza i messaggi relativi al contatto attivo nel pannello della conversazione-->
+                            
+                            <div class="main-content">
                                 <div class=" message-list col-12  mt-2 ">
+                                    
                                         <div :class="printMessage(index)" 
                                         v-for="(messages,index) in contacts[indexContacts].messages">
                                             <span>{{messages.text}}</span>
                                             <div class="date-time mb-5">{{messages.date}}</div>
                                         </div>
+                                   
                                 </div>
  
                             </div>
+                            
                             <!--(footer) SEZIONE INPUT-CHAT--MILESTONE 3--l'utente scrive un testo e viene aggiunto come messaggio verde-->
                             <div class="chat-box col-12 mt-5">
                                 <i class="far fa-smile"></i>
                                 <div class=" col-10 message">
-                                    <input v-model= "userMessage" type="text" @keyup.enter="sendMessage" placeholder=" Scrivi un messaggio">
+                                    <input v-model= "userMessage" type="text" @keyup.enter="sendMessage" placeholder="   Scrivi un messaggio">
                                     <div v-for="message in contacts[indexContacts].messages">
                                         <span>{{userMessage.index}}</span>
                                     </div>

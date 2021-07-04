@@ -92,24 +92,96 @@ new Vue(
                     ],
                     
                 },
+                {
+                    name: 'Francesca',
+                    user: './img/avatar_io.jpg',
+                    avatar: '_4',
+                    visible: true,
+                    messages: [
+                        {
+                            date: '10/01/2020 15:30:55',
+                            text: 'Lo sai che ha aperto una nuova pizzeria?',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            text: 'Si, ma preferirei andare al cinema',
+                            status: 'received'
+                        },
+                    ],
+                    
+                },
+                {
+                    name: 'Dayron',
+                    user: './img/avatar_8.jpg',
+                    avatar: '_4',
+                    visible: true,
+                    messages: [
+                        {
+                            date: '10/01/2020 15:30:55',
+                            text: 'In Sicilia si muore di caldo! Da te a Roma?',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            text: 'Si, anche qui caldissimo!',
+                            status: 'received'
+                        },
+                        
+                    ],
+                    
+                },
+                {
+                    name: 'Gabriele',
+                    user: './img/avatar_7.jpg',
+                    avatar: '_4',
+                    visible: true,
+                    messages: [
+                        {
+                            date: '10/01/2020 15:30:55',
+                            text: 'Ci vediamo su zoom più tardi?',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            text: 'Si, dopo cena, ora ho da fare! ',
+                            status: 'received'
+                        },
+                        
+                    ],
+                    
+                },
                
             ],
 
             indexContacts: 0,
             indexMessage: 0,
             userMessage: '',
+            search:'',
         
             
         },//chiude il data
-        
-                //funzione associata al v-for che permette di 
-                //visualizzare nome e img di ogni  contatto
-        methods: {
+        computed: {
+            filteredAndSorted (){
+                function compare(a,b){
+                 if (a.name < b.name) return -1;
+                 if (a.name > b.name) return 1;
+                 return 0;
+                }
+                
+              return this.contacts.filter(user => {
+                  return user.name.toLowerCase().includes(this.search.toLowerCase())
+              }).sort(compare)
+             }
+                
+            },
+                                                                    
+        methods: { //  Milestone 1
             moveTo: function (index) {
                 this.indexContacts = index;
             },
         
-             //funzione per stampare il messaggio del singolo utente       
+             // Milestone 2       
             printMessage: function(index) 
             {
                const status = this.contacts[this.indexContacts].messages[index].status
@@ -127,7 +199,7 @@ new Vue(
                 return dateTimeNow.format("DD/MM/YYYY HH:mm:ss");
                 
             },
-            //funzione per aggiungere un messaggio(pusha oggetto nell'array)
+            // Milestone 3
             sendMessage: function () {
                 this.contacts[this.indexContacts].messages.push({
                     date: this.getCurrentDateTime(),
@@ -145,6 +217,7 @@ new Vue(
                     });
                 }, 1000);
             }
+            
            
         }, //chiude il methods
         
