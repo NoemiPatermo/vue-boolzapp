@@ -100,12 +100,12 @@ new Vue(
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
-                            text: 'Lo sai che ha aperto una nuova pizzeria?',
+                            text: 'Hai prenotato il viaggio?',
                             status: 'sent'
                         },
                         {
                             date: '10/01/2020 15:50:00',
-                            text: 'Si, ma preferirei andare al cinema',
+                            text: 'Yessss!Si parteeeeeeeee!',
                             status: 'received'
                         },
                     ],
@@ -155,7 +155,7 @@ new Vue(
             ],
 
             indexContacts: 0,
-            indexMessage: 0,
+            
             userMessage: '',
             search:'',
         
