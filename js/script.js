@@ -92,70 +92,11 @@ new Vue(
                     ],
                     
                 },
-                {
-                    name: 'Francesca',
-                    user: './img/avatar_io.jpg',
-                    avatar: '_4',
-                    visible: true,
-                    messages: [
-                        {
-                            date: '10/01/2020 15:30:55',
-                            text: 'Hai prenotato il viaggio?',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 15:50:00',
-                            text: 'Yessss!Si parteeeeeeeee!',
-                            status: 'received'
-                        },
-                    ],
-                    
-                },
-                {
-                    name: 'Dayron',
-                    user: './img/avatar_8.jpg',
-                    avatar: '_4',
-                    visible: true,
-                    messages: [
-                        {
-                            date: '10/01/2020 15:30:55',
-                            text: 'In Sicilia si muore di caldo! Da te a Roma?',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 15:50:00',
-                            text: 'Si, anche qui caldissimo!',
-                            status: 'received'
-                        },
-                        
-                    ],
-                    
-                },
-                {
-                    name: 'Gabriele',
-                    user: './img/avatar_7.jpg',
-                    avatar: '_4',
-                    visible: true,
-                    messages: [
-                        {
-                            date: '10/01/2020 15:30:55',
-                            text: 'Ci vediamo su zoom più tardi?',
-                            status: 'sent'
-                        },
-                        {
-                            date: '10/01/2020 15:50:00',
-                            text: 'Si, dopo cena, ora ho da fare! ',
-                            status: 'received'
-                        },
-                        
-                    ],
-                    
-                },
-               
+                
             ],
 
             indexContacts: 0,
-            
+            indexMessage: 0,
             userMessage: '',
             search:'',
         
