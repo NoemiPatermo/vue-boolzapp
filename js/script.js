@@ -102,20 +102,20 @@ new Vue(
         
             
         },//chiude il data
-        computed: {
-            filteredAndSorted (){
-                function compare(a,b){
-                 if (a.name < b.name) return -1;
-                 if (a.name > b.name) return 1;
-                 return 0;
-                }
+       // computed: {
+          //  filteredAndSorted (){
+            //    function compare(a,b){
+             //    if (a.name < b.name) return -1;
+              //   if (a.name > b.name) return 1;
+              //   return 0;
+             //   }
                 
-              return this.contacts.filter(user => {
-                  return user.name.toLowerCase().includes(this.search.toLowerCase())
-              }).sort(compare)
-             }
+           //   return this.contacts.filter(user => {
+             //     return user.name.toLowerCase().includes(this.search.toLowerCase())
+           //   }).sort(compare)
+           //  }
                 
-            },
+           // },
                                                                     
         methods: { //  Milestone 1
             moveTo: function (index) {
@@ -123,8 +123,8 @@ new Vue(
             },
         
              // Milestone 2       
-            printMessage: function(index) 
-            {
+            printMessage: function(index) {
+
                const status = this.contacts[this.indexContacts].messages[index].status
                 if (status === 'sent') {
                     return 'sentMessage';
@@ -157,6 +157,7 @@ new Vue(
                         status: 'received',
                     });
                 }, 1000);
+                
             }
             
            

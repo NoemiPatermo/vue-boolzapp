@@ -55,7 +55,7 @@
                             <!--MILESTONE 1 [visualizzi nome e img lista contatti che al click, cambiano]-->
                                 <div class="contacts-list mt-3">
                                     <ul>
-                                        <li v-for="(user, index) in filteredAndSorted" @click="moveTo(index)" class="chat-with-you">
+                                        <li v-for="(user, index) in contacts" @click="moveTo(index)" class="chat-with-you">
                                             <img :src="user.user" alt="">
                                             {{user.name}}
                                         </li>   
@@ -70,10 +70,10 @@
                                 <div class="row">
                                     <div class=" col-10 d-flex user-chat p-2">
                                         <span class="user-img">
-                                            <img :src="filteredAndSorted[indexContacts].user" alt="">
+                                            <img :src="contacts[indexContacts].user" alt="">
                                         </span> 
                                          <span>
-                                            <div>{{filteredAndSorted[indexContacts].name}}</div>
+                                            <div>{{contacts[indexContacts].name}}</div>
                                             <div>Ultimo accesso oggi alle</div>
                                         </span>
                                     </div>
@@ -91,7 +91,7 @@
                                 <div class=" message-list col-12  mt-2 ">
                                     
                                         <div :class="printMessage(index)" 
-                                        v-for="(messages,index) in filteredAndSorted[indexContacts].messages">
+                                        v-for="(messages,index) in contacts[indexContacts].messages">
                                             <span>{{messages.text}}</span>
                                             <div class="date-time mb-5">{{messages.date}}</div>
                                         </div>
@@ -104,10 +104,8 @@
                             <div class="chat-box col-12 mt-5">
                                 <i class="far fa-smile"></i>
                                 <div class=" col-10 message">
-                                    <input v-model= "userMessage" type="text" @keyup.enter="sendMessage" placeholder="   Scrivi un messaggio">
-                                    <div v-for="message in filteredAndSorted[indexContacts].messages">
-                                        <span>{{userMessage.index}}</span>
-                                    </div>
+                                    <input v-model= "userMessage" type="text" @keyup.enter="sendMessage()" placeholder="   Scrivi un messaggio">
+                                   
                                 </div>
                                 <i class="fas fa-microphone"></i>
                             </div>
