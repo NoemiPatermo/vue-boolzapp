@@ -101,21 +101,21 @@ new Vue(
             search:'',
         
             
-        },//chiude il data
-       // computed: {
-          //  filteredAndSorted (){
-            //    function compare(a,b){
-             //    if (a.name < b.name) return -1;
-              //   if (a.name > b.name) return 1;
-              //   return 0;
-             //   }
+        },
+        computed: {
+            filteredAndSorted (){
+                function compare(a,b){
+                 if (a.name < b.name) return -1;
+                 if (a.name > b.name) return 1;
+                 return 0;
+               }
                 
-           //   return this.contacts.filter(user => {
-             //     return user.name.toLowerCase().includes(this.search.toLowerCase())
-           //   }).sort(compare)
-           //  }
+              return this.contacts.filter(user => {
+                  return user.name.toLowerCase().includes(this.search.toLowerCase())
+              }).sort(compare)
+             }
                 
-           // },
+            },
                                                                     
         methods: { //  Milestone 1
             moveTo: function (index) {
@@ -161,9 +161,9 @@ new Vue(
             }
             
            
-        }, //chiude il methods
+        }, 
         
        
-    } //chiude la vue
+    } 
  );
   
